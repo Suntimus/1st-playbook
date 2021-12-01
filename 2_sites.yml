@@ -3,4 +3,4 @@
    hosts: virtual
    become: yes
    roles:
-     - packeges_and_structure
+     - basic setup
