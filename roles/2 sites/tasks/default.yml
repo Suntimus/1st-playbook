@@ -1,0 +1,42 @@
+---
+ - name: "SELinux disable"
+   ansible.posix.selinux:
+     state: disabled
+
+ - name: "Reboot after disable SELinux"
+   notify: "Reboot server"
+
+ - name: "Istall yum-utils"
+   yum:
+     name: yum-utils
+     state: latest
+
+ - name: "Add Nginx repo"
+   copy:
+     src: nginx.repo
+     dest: /etc/yum.repos.d/
+     owner: root
+     group: root
+     register: nginx_repo
+
+ - name: "Add REMI repo"
+   copy:
+     src: remi.repo
+     dest: /etc/yum.repos.d/
+     owner: root
+     group: root
+     register: nginx_repo
+
+ - name: "Enable REMI repo"
+   ini_file:
+     dest: "/etc/yum.repos.d/remi.repo"
+     section: "remi-php74"
+     option: enabled 
+
+ - name: "Add Epel repo"
+   copy:
+     src: epel.repo
+     dest: /etc/yum.repos.d/
+     owner: root
+     group: root
+     register: nginx_repo

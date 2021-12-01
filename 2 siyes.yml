@@ -1,0 +1,6 @@
+---
+ - name: "Two sites playbook"
+   hosts: virtual
+   become: yes
+   roles:
+     - packeges_and_structure

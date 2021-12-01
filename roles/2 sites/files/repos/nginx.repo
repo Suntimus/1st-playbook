@@ -1,0 +1,4 @@
+[nginx]
+name: nginx repo
+baseurl: "http://nginx.org/packages/centos/7/$basearch/"
+enabled: yes

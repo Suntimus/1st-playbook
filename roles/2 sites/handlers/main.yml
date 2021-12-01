@@ -1,0 +1,36 @@
+---
+ - name: start nginx
+   service:
+     name: nginx
+     state: started
+
+
+ - name: start mysqld
+   service:
+     name: mysqld
+     state: started
+
+ - name: start php-fpm
+   service:
+     name: php-fpm
+     state: started
+
+
+ - name: restart nginx
+   service:
+     name: nginx
+     state: restarted
+
+ - name: restart mysqld
+   service:
+     name: mysqld
+     state: restarted
+
+ - name: restart php-fpm
+   service:
+     name: php-fpm
+     state: restarted
+
+ - name: Reboot server
+   reboot:
+     delay: 60

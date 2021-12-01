@@ -1,0 +1,16 @@
+---
+ - name: "Install All Packeges"
+   yum:
+     name: "{{ packages }}"
+     state: latest
+
+ - name: "Structure project"
+   file:
+     path: "{{ structure }}"
+     state: directory
+     owner: "nginx"
+     group: "nginx"
+     mode: "0644"
+
+ - name: "Reboot after install packeges"
+   notify: "Reboot server"
