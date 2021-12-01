@@ -1,39 +1,34 @@
 ---
-packages:
-  - nano
-  - mc
-  - nginx
-  - php
-  - php-mysqlnd
-  - php-curl
-  - php-gd
-  - php-mbstring
-  - php-xml
-  - php-xmlrpc
-  - php-soap
-  - php-intl
-  - php-zip
-  - certbot
-  - percona
+ packages:
+   - nano
+   - mc
+   - nginx
+   - php
+   - php-mysqlnd
+   - php-curl
+   - php-gd
+   - php-mbstring
+   - php-xml
+   - php-xmlrpc
+   - php-soap
+   - php-intl
+   - php-zip
+   - certbot
+   - percona
 
-servise:
-  - php-fpm
-  - nginx
-  - mysqld
+ structure:
+   - /web
+   - /web/sites
+   - /web/sites/{{ hostname1 }}
+   - /web/sites/{{ hostname1 }}/www
+   - /web/sites/{{ hostname1 }}/log
+   - /web/sites/{{ hostname1 }}/tmp
+   - /web/sites/{{ hostname2 }}
+   - /web/sites/{{ hostname2 }}/www
+   - /web/sites/{{ hostname2 }}/log
+   - /web/sites/{{ hostname2 }}/tmp
+   - /etc/nginx/sites-enabled
+   - /etc/nginx/sites-available
 
-structure:
-  - /web
-  - /web/sites
-  - /web/sites/{{ hostname1 }}
-  - /web/sites/{{ hostname1 }}/www
-  - /web/sites/{{ hostname1 }}/log
-  - /web/sites/{{ hostname1 }}/tmp
-  - /web/sites/{{ hostname2 }}
-  - /web/sites/{{ hostname2 }}/www
-  - /web/sites/{{ hostname2 }}/log
-  - /web/sites/{{ hostname2 }}/tmp
-  - /etc/nginx/sites-enabled
-  - /etc/nginx/sites-available
-
-hostname1: "darkcave.ru"
-hostname2: "kanashimi.ru"
+ hostname1: "darkcave.ru"
+ hostname2: "kanashimi.ru"

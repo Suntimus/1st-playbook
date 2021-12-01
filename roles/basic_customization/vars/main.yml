@@ -1,0 +1,5 @@
+---
+ servise:
+   - php-fpm
+   - nginx
+   - mysqld
